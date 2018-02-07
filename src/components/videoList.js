@@ -1,9 +1,13 @@
 
 Vue.component('video-list', {
-  template: `<div className="video-list">
-    <video-list-entry
-      v-for:"video in videos"
-      v-bind:video="video"
-      v-bind:key="video.id"
+  props: {
+  	videos: Array,
+  },
+  template: `<div class="video-list">
+    <video-list-entry></video-list-entry>
+    <video-list-entry></video-list-entry>
+    <video-list-entry></video-list-entry>
+    <video-list-entry></video-list-entry>
+    <video-list-entry></video-list-entry>
   </div>`
 })

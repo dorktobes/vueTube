@@ -1,8 +1,12 @@
 Vue.component('search', {
-	template: `<div className="search-bar form-inline">
-    <input className="form-control" type="text" />
-    <button className="btn hidden-sm-down">
-      <span className="glyphicon glyphicon-search"></span>
-    </button>
-  </div> `
+	template: `
+	<div class="search-bar form-inline">
+      <input
+        class="form-control"
+        type="text"
+      />
+      <button class="btn hidden-sm-down">
+        <span class="glyphicon glyphicon-search"></span>
+      </button>
+    </div>`
 })

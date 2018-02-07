@@ -4,24 +4,34 @@
 
 
 Vue.component('app', {
-  template: `  <div>
-			    <nav className="navbar">
-			      <div className="col-md-6 offset-md-3">
-			        <search></search>
-			      </div>
-			    </nav>
-			    <div className="row">
-			      <div className="col-md-7">
-			        <video-player></video-player>
-			      </div>
-			      <div className="col-md-5">
-			        <video-list></video-list>
-			      </div>
-			    </div>
-			  </div>`
+  template: `  
+        <div>
+          <nav class="navbar">
+            <div class="col-md-6 offset-md-3">
+              <search></search>
+            </div>
+          </nav>
+          <div class="row">
+            <div class="col-md-7">
+              <video-player ></video-player>
+            </div>
+            <div class="col-md-5">
+              <video-list></video-list>
+            </div>
+          </div>
+        </div>`
 });
 
-new Vue({
-	el: '#app'
+let vm = new Vue({
+  el: '#app',
+  data: {
+    videos: exampleVideoData,
+    currentVideo: exampleVideoData[0]
+  },
+  methods: {
+    handleClick: function(video){
+      this.currentVideo = video;
+    }
+  }
 });
   
