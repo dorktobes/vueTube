@@ -4,10 +4,10 @@ Vue.component('video-list', {
   	videos: Array,
   },
   template: `<div class="video-list">
-    <video-list-entry></video-list-entry>
-    <video-list-entry></video-list-entry>
-    <video-list-entry></video-list-entry>
-    <video-list-entry></video-list-entry>
-    <video-list-entry></video-list-entry>
+    <video-list-entry
+      v-for="video in videos"
+      :video="video"
+      :key="video.id.videoId"
+      ></video-list-entry>
   </div>`
 })

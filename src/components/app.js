@@ -1,9 +1,5 @@
-// let data = {videos: exampleVideoData, currentVideo: exampleVideoData[0]};
-// let vm = new Vue({ data })
-//properties manually added to the 'vm' after instantiation won't be reactive
-
-
-Vue.component('app', {
+let vm = new Vue({
+  el: '#app',
   template: `  
         <div>
           <nav class="navbar">
@@ -13,19 +9,19 @@ Vue.component('app', {
           </nav>
           <div class="row">
             <div class="col-md-7">
-              <video-player ></video-player>
+              <video-player
+                :video="this.currentVideo"
+               ></video-player>
             </div>
             <div class="col-md-5">
-              <video-list></video-list>
+              <video-list
+                :videos="this.videos"
+              ></video-list>
             </div>
           </div>
-        </div>`
-});
-
-let vm = new Vue({
-  el: '#app',
+        </div>`,
   data: {
-    videos: exampleVideoData,
+    videos: [...exampleVideoData],
     currentVideo: exampleVideoData[0]
   },
   methods: {
